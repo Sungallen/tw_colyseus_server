@@ -12,6 +12,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "src/config/arena.config.ts",
+    "src/index.ts" ]
 }

@@ -33,8 +33,16 @@
   "dependencies": {
     "@colyseus/arena": "^0.14.22",
     "@colyseus/monitor": "^0.14.20",
+    "@types/morgan": "^1.9.3",
+    "@types/mysql": "^2.15.21",
+    "body-parser": "^1.20.0",
     "colyseus": "^0.14.20",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http-status": "^1.5.2",
+    "joi": "^17.6.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
   }
 }

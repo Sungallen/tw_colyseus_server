@@ -1,9 +1,8 @@
 import { Schema, MapSchema, type } from "@colyseus/schema";
 
 export class Player extends Schema {
-  @type("number") x: number;
-  @type("number") y: number;
-  @type("number") z: number;
+  @type("number") longtitude: number;
+  @type("number") latitude: number;
 }
 export class MyRoomState extends Schema {
   @type({ map: Player }) players = new MapSchema<Player>();
