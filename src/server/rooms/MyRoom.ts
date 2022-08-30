@@ -21,12 +21,19 @@ export class MyRoom extends Room<MyRoomState> {
   onJoin(client: Client, options: any) {
     console.log(client.sessionId, "joined!");
     const player = new Player();
-
-    player.longitude = 120.8966868706328;
-    player.latitude = 23.83015369701973;
-    player.sessionId = client.sessionId;
-    this.state.players.set(client.sessionId, player);
-    console.log("new player =>", player.toJSON());
+    if (!options["Island_status"]){
+      player.longitude = 120.8966868706328;
+      player.latitude = 23.83015369701973;
+      player.sessionId = client.sessionId;
+      this.state.players.set(client.sessionId, player);
+      console.log("new player =>", player.toJSON());
+    } else {
+      player.latitude = 0;
+      player.longitude = 0;
+      player.sessionId = client.sessionId;
+      this.state.players.set(client.sessionId, player);
+      console.log("new player =>", player.toJSON());
+    }
   }
 
   onLeave(client: Client, consented: boolean) {
