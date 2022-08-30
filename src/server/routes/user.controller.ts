@@ -1,3 +1,4 @@
+import { BodyParser } from "body-parser";
 import userModule from "./user.module";
 
 const addzonestate = (req: any, res: any) => {

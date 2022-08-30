@@ -6,7 +6,8 @@ const addzone = (insertValues: any) => new Promise((resolve, reject) => {
         console.log(result);
         if (result.affectedRows === 1){
             resolve({
-                Status: true
+                Status: true,
+                insertId: result.insertId
             });
         } else {
             reject({
