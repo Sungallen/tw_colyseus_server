@@ -1,7 +1,8 @@
 import { Schema, MapSchema, type } from "@colyseus/schema";
 
 export class Player extends Schema {
-  @type("number") longtitude: number;
+  @type("string") sessionId: string;
+  @type("number") longitude: number;
   @type("number") latitude: number;
 }
 export class MyRoomState extends Schema {

@@ -1,6 +1,5 @@
 import config from "../../config/config"
 import httpStatus from "http-status"
-import { MysqlError } from "mysql"
 function APIError(message: any) {
     return {
         message,

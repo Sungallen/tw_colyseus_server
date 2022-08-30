@@ -7,5 +7,5 @@ router.get('/', (req: any, res: any) => {
 })
 router.post('/addstate', userController.addzonestate);
 
-
+router.get('/getzoneinfo', userController.getzoneinfo);
 export default router;

@@ -11,8 +11,9 @@ export class MyRoom extends Room<MyRoomState> {
       console.log("update received -> ");
       console.debug(JSON.stringify(data));
       const player = this.state.players.get(client.sessionId);
-      player.longtitude = data["longtitude"];
+      player.longitude = data["longitude"];
       player.latitude = data['latitude'];
+      player.sessionId = data['sessionId'];
     });
 
   }
@@ -21,15 +22,15 @@ export class MyRoom extends Room<MyRoomState> {
     console.log(client.sessionId, "joined!");
     const player = new Player();
 
-    player.longtitude = 120.8966868706328;
+    player.longitude = 120.8966868706328;
     player.latitude = 23.83015369701973;
-
+    player.sessionId = client.sessionId;
     this.state.players.set(client.sessionId, player);
     console.log("new player =>", player.toJSON());
   }
 
   onLeave(client: Client, consented: boolean) {
-    //this.state.players.delete(client.sessionId);
+    this.state.players.delete(client.sessionId);
 
     console.log(client.sessionId, "left!");
   }
